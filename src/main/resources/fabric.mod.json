@@ -3,7 +3,7 @@
 	"id": "arcs",
 	"version": "${version}",
 	"name": "Arc SMP",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Server-side mod for Arc SMP.",
 	"authors": [
 		"Voidbehemoth"
 	],
