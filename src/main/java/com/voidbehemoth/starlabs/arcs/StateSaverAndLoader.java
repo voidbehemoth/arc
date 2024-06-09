@@ -1,22 +1,16 @@
 package com.voidbehemoth.starlabs.arcs;
 
-import com.voidbehemoth.starlabs.arcs.mixin.MinecraftServerMixin;
 import com.voidbehemoth.starlabs.arcs.util.PlayerData;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtByte;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.integrated.IntegratedServer;
 import net.minecraft.world.PersistentState;
 import net.minecraft.world.PersistentStateManager;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Objects;
 import java.util.UUID;
 
 public class StateSaverAndLoader extends PersistentState {

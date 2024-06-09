@@ -1,6 +1,5 @@
 package com.voidbehemoth.starlabs.arcs;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
@@ -9,8 +8,6 @@ import net.minecraft.nbt.NbtByte;
 import net.minecraft.recipe.RecipeInputProvider;
 import net.minecraft.recipe.RecipeMatcher;
 import net.minecraft.text.Text;
-
-import java.util.*;
 
 public class ModInventory implements Inventory, RecipeInputProvider {
     private int page;

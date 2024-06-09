@@ -1,6 +1,5 @@
 package com.voidbehemoth.starlabs.arcs.mixin;
 
-import net.minecraft.entity.vehicle.HopperMinecartEntity;
 import net.minecraft.entity.vehicle.StorageMinecartEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
