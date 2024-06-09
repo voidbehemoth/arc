@@ -5,7 +5,7 @@
 	"name": "Arc SMP",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"Voidbehemoth"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -15,11 +15,8 @@
 	"icon": "assets/arcs/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": [
+		"server": [
 			"com.voidbehemoth.starlabs.arcs.ArcSMP"
-		],
-		"fabric-datagen": [
-			"com.voidbehemoth.starlabs.arcs.ArcSMPDataGenerator"
 		]
 	},
 	"mixins": [

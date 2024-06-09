@@ -9,9 +9,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
-import java.util.OptionalInt;
-
 public class ModPlayer implements NamedScreenHandlerFactory {
     private final Inventory guiInventory;
 

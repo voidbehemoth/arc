@@ -1,7 +1,7 @@
 package com.voidbehemoth.starlabs.arcs.mixin;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LecternBlock;
+import net.minecraft.block.DecoratedPotBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.ActionResult;
@@ -14,11 +14,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(LecternBlock.class)
-public class LecternBlockMixin {
-    @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
-    private void injected(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
+@Mixin(DecoratedPotBlock.class)
+public class DecoratedPotBlockMixin {
+    @Inject(method = "onUse", at = @At(value = "HEAD"), cancellable = true)
+    private void useFix(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
         NbtCompound nbt = player.getStackInHand(hand).getNbt();
+
         if (nbt != null && nbt.getBoolean("arc")) cir.setReturnValue(ActionResult.PASS);
     }
 }

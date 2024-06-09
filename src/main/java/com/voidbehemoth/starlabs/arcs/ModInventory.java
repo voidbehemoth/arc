@@ -3,30 +3,29 @@ package com.voidbehemoth.starlabs.arcs;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtByte;
 import net.minecraft.recipe.RecipeInputProvider;
 import net.minecraft.recipe.RecipeMatcher;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.text.Text;
 
 import java.util.*;
 
 public class ModInventory implements Inventory, RecipeInputProvider {
-    private final int size = 54;
     private int page;
 
     public ModInventory() {
-//        this.size = items.length;
-//        this.stacks = DefaultedList.copyOf(ItemStack.EMPTY, items);
         page = 0;
     }
 
     public ItemStack getStack(int slot) {
         ItemStack stack;
-        StateSaverAndLoader state = StateSaverAndLoader.getServerState(Objects.requireNonNull(MinecraftClient.getInstance().getServer()));
+        StateSaverAndLoader state = StateSaverAndLoader.getServerState();
+        if (state == null) {
+            ArcSMP.LOGGER.error("Server is not initialized, somehow.");
+            return ItemStack.EMPTY;
+        }
         if (slot == 47 && page != 0) { // back
             stack = new ItemStack(Items.RED_STAINED_GLASS_PANE);
             stack.setCustomName(Text.of("Previous Page"));
@@ -50,25 +49,15 @@ public class ModInventory implements Inventory, RecipeInputProvider {
         return ItemStack.EMPTY;
     }
 
-    public List<ItemStack> clearToList() {
-        return new ArrayList<ItemStack>();
-    }
-
     public ItemStack removeStack(int slot, int amount) {
         return removeStack(slot);
     }
 
-    public ItemStack removeItem(Item item, int count) {
-        return ItemStack.EMPTY;
-    }
-
-
-    public boolean canInsert(ItemStack stack) {
-        return false;
-    }
-
     public ItemStack removeStack(int slot) {
-        StateSaverAndLoader state = StateSaverAndLoader.getServerState(Objects.requireNonNull(MinecraftClient.getInstance().getServer()));
+        StateSaverAndLoader state = StateSaverAndLoader.getServerState();
+        if (state == null) {
+            return ItemStack.EMPTY;
+        }
         if (slot == 47) { // back
             if (page != 0) page--;
         } else if (slot == 51) { // forward
@@ -89,7 +78,7 @@ public class ModInventory implements Inventory, RecipeInputProvider {
     }
 
     public int size() {
-        return this.size;
+        return 54;
     }
 
     public boolean isEmpty() {
@@ -108,11 +97,7 @@ public class ModInventory implements Inventory, RecipeInputProvider {
     }
 
     public String toString() {
-        return "hehe";
-    }
-
-    private void transfer(ItemStack source, ItemStack target) {
-
+        return "inventory";
     }
 
 

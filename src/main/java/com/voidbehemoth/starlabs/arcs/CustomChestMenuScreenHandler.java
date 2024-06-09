@@ -11,24 +11,21 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.collection.DefaultedList;
 
 public class CustomChestMenuScreenHandler extends ScreenHandler {
-
-    private static final int NUM_COLUMNS = 9;
     private final Inventory inventory;
     private final PlayerInventory playerInventory;
-    private final int rows;
 
     public CustomChestMenuScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(ScreenHandlerType.GENERIC_9X6, syncId);
         checkSize(inventory, 54);
         this.inventory = inventory;
         this.playerInventory = playerInventory;
-        this.rows = 6;
+        int rows = 6;
         inventory.onOpen(playerInventory.player);
         int i = 36;
 
         int j;
         int k;
-        for(j = 0; j < this.rows; ++j) {
+        for(j = 0; j < rows; ++j) {
             for(k = 0; k < 9; ++k) {
                 this.addSlot(new Slot(inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
             }
@@ -82,13 +79,5 @@ public class CustomChestMenuScreenHandler extends ScreenHandler {
     public void onClosed(PlayerEntity player) {
         super.onClosed(player);
         this.inventory.onClose(player);
-    }
-
-    public Inventory getInventory() {
-        return this.inventory;
-    }
-
-    public int getRows() {
-        return this.rows;
     }
 }

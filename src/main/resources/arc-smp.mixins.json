@@ -1,21 +1,29 @@
 {
-	"required": true,
-	"package": "com.voidbehemoth.starlabs.arcs.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"AbstractFurnaceScreenHandlerMixin",
-		"AllayEntityMixin",
-		"Generic3x3ContainerScreenHandlerMixin",
-		"GenericContainerScreenHandlerMixin",
-		"HopperScreenHandlerMixin",
-		"ItemFrameEntityMixin",
-		"LecternBlockMixin",
-		"PlayerEntityMixin",
-		"ShulkerBoxScreenHandlerMixin",
-		"SimpleInventoryMixin",
-		"WrittenBookItemMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "com.voidbehemoth.starlabs.arcs.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "server": [
+    "AbstractFurnaceScreenHandlerMixin",
+    "AllayEntityMixin",
+    "Generic3x3ContainerScreenHandlerMixin",
+    "GenericContainerScreenHandlerMixin",
+    "HopperScreenHandlerMixin",
+    "ItemFrameEntityMixin",
+    "LecternBlockMixin",
+    "MinecraftServerMixin",
+    "PlayerEntityMixin",
+    "ShulkerBoxScreenHandlerMixin",
+    "SimpleInventoryMixin",
+    "WrittenBookItemMixin",
+    "LootableContainerBlockEntityMixin",
+    "AbstractFurnaceBlockEntityMixin",
+    "ChiseledBookshelfBlockMixin",
+    "DecoratedPotBlockMixin",
+    "StorageMinecartEntityMixin",
+    "HopperBlockEntityMixin",
+    "ChestBoatEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
