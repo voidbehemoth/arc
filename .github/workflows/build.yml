@@ -39,7 +39,7 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           github-tag: "v${{env.VERSION}}"
-          github-token: "${{env.GH_TOKEN}}"
+          github-token: "${{secrets.GH_TOKEN}}"
 
           name: "Arc SMP"
           version: "mc1.20.4-${{env.VERSION}}"
