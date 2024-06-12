@@ -21,7 +21,8 @@
     "DecoratedPotBlockMixin",
     "StorageMinecartEntityMixin",
     "HopperBlockEntityMixin",
-    "ChestBoatEntityMixin"
+    "ChestBoatEntityMixin",
+    "ScreenHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
